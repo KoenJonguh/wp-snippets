@@ -1,0 +1,19 @@
+/* Snippet om bij Woocommerce 'Op voorraad', 'Niet op voorraad' en 'Op nabestelling' te veranderen in custom tekst.*/
+
+add_filter( 'woocommerce_get_availability_text', 'custom_availability_text', 10, 2 );
+function custom_availability_text( $availability, $_product ) {
+    if ( ! $_product->is_in_stock() ) {
+        $availability = __( 'Uitverkocht', 'woocommerce' );
+    } elseif ( $_product->is_on_backorder( 1 ) ) {
+        $availability = __( 'Levertijd 2-3 weken', 'woocommerce' );
+    } elseif ( $_product->get_stock_quantity() == 1 ) {
+        $availability = __( 'Nog maar 1 op voorraad!', 'woocommerce' );
+    } elseif ( $_product->get_stock_quantity() == 2 ) {
+        $availability = __( 'Nog maar 2 op voorraad!', 'woocommerce' );
+    } else {
+        $availability = __( 'Voor 15:00 besteld, morgen in huis', 'woocommerce' );
+    }
+    return $availability;
+}
+
+/* By Koen*/
