@@ -16,4 +16,4 @@ function custom_availability_text( $availability, $_product ) {
     return $availability;
 }
 
-/* By Koen*/
+/* By knjgh - https://github.com/KoenJonguh*/
