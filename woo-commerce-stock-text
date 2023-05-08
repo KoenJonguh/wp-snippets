@@ -1,4 +1,4 @@
-/* Snippet om bij Woocommerce 'Op voorraad', 'Niet op voorraad' en 'Op nabestelling' te veranderen in custom tekst.*/
+/* De Woocommerce 'Op voorraad', 'Niet op voorraad', 'Op nabestelling' en 'Nog 1/2 op voorraad' veranderen in custom tekst. */
 
 add_filter( 'woocommerce_get_availability_text', 'custom_availability_text', 10, 2 );
 function custom_availability_text( $availability, $_product ) {
