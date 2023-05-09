@@ -1,0 +1,22 @@
+/* 
+Een simpele snippet om een responsive levertijd op je pagina te weergeven. 
+Is het vòòr 15:00? Dan word:'Voor 15:00 besteld, morgen in huis!' weergeven.
+Is het na 15:00? Dan word 'Nu besteld, morgen verzonden!' weergeven.
+Is het zaterdag of zondag? Dan word 'Nu besteld, dinsdag in huis!'  weergeven.
+Gebruik short code [levertijd].
+ */
+
+function levertijd_shortcode() {
+    $dayOfWeek = date('N');
+    $time = date('H:i');
+    if ($dayOfWeek == 6 || $dayOfWeek == 7) {
+        return 'Nu besteld, dinsdag in huis!';
+    } elseif ($time <= '15:00') {
+        return 'Voor 15:00 besteld, morgen in huis!';
+    } else {
+        return 'Nu besteld, morgen verzonden!';
+    }
+}
+add_shortcode('levertijd', 'levertijd_shortcode');
+
+/* By knjgh - https://github.com/KoenJonguh/wp-snippets */
