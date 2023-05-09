@@ -4,7 +4,11 @@ Deze let niet alleen op de dagen, maar ook op de tijd.
 
 Is het vòòr 15:00? Dan word 'Voor 15:00 besteld, morgen in huis' weergeven.
 Is het na 15:00? Dan word 'Nu besteld, overmorgen in huis' weergeven.
-Is het zaterdag of zondag? Dan word 'Nu besteld, dinsdag in huis' weergeven.
+
+Is het vòòr 15:00 en nog maar 1/2 op voorraad? Dan word 'Nog maar 1/2 op voorraad! Voor 15:00 besteld, morgen in huis' weergeven.
+Is het na 15:00 en nog maar 2 op voorraad? Dan word 'Nog maar 1/2 op voorraad! Nu besteld, morgen in huis' weergeven.
+
+Is het zaterdag of zondag? Dan word 'Nu besteld, dinsdag in huis' weergeven. Ook hier geld 'Nog maar 1/2 op voorraad!'.
  */
 
 
