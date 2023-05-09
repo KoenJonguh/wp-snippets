@@ -2,6 +2,9 @@
 Een nog uitgebreidere Woocommerce In-Stock Text snippet.
 Deze let niet alleen op de dagen, maar ook op de tijd.
 
+Met 'Stock' bedoel ik de Woocommerce voorraad die word weergeven op een product pagina. Deze 
+veranderen we met deze snippet in bijvoorbeeld 'Uitverkocht' en 'Voor 15:00, morgen in huis'.
+
 Is het vòòr 15:00? Dan word 'Voor 15:00 besteld, morgen in huis' weergeven.
 Is het na 15:00? Dan word 'Nu besteld, overmorgen in huis' weergeven.
 
