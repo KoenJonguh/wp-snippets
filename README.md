@@ -1,5 +1,5 @@
 # wp-snippets
-Handige Snippets Wordpress Woocommerce
+**Handige Snippets Wordpress Woocommerce**
 
 **woocommerce-stock-text**
 De Woocommerce 'Op voorraad', 'Niet op voorraad', 'Op nabestelling' en 'Nog 1/2 op voorraad' veranderen in custom tekst.
