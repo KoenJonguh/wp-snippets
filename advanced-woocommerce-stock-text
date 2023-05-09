@@ -1,0 +1,30 @@
+/* De Woocommerce 'Op voorraad', 'Niet op voorraad', 'Op nabestelling' en 'Nog 1/2 op voorraad' veranderen in custom tekst. Deze snippet houd ook rekening met zaterdag en zondag.*/
+
+
+add_filter( 'woocommerce_get_availability_text', 'custom_availability_text', 10, 2 );
+function custom_availability_text( $availability, $_product ) {
+    $current_day = strtolower(date('l')); // haalt de huidige dag op (in kleine letters)
+    if ( ! $_product->is_in_stock() ) {
+        $availability = __( 'Uitverkocht', 'woocommerce' );
+    } elseif ( $_product->is_on_backorder( 1 ) ) {
+        $availability = __( 'Levertijd 2-3 weken', 'woocommerce' );
+    } elseif ( $_product->get_stock_quantity() == 1 ) {
+        $availability = __( 'Nog maar 1 op voorraad!', 'woocommerce' );
+        if ( $current_day == 'saturday' || $current_day == 'sunday' ) {
+            $availability .= ' ' . __( 'Nu besteld, dinsdag in huis', 'woocommerce' );
+        }
+    } elseif ( $_product->get_stock_quantity() == 2 ) {
+        $availability = __( 'Nog maar 2 op voorraad!', 'woocommerce' );
+        if ( $current_day == 'saturday' || $current_day == 'sunday' ) {
+            $availability .= ' ' . __( 'Nu besteld, dinsdag in huis', 'woocommerce' );
+        }
+    } else {
+        $availability = __( 'Voor 15:00 besteld, morgen in huis', 'woocommerce' );
+        if ( $current_day == 'saturday' || $current_day == 'sunday' ) {
+            $availability = __( 'Nu besteld, dinsdag in huis', 'woocommerce' );
+        }
+    }
+    return $availability;
+}
+
+/* By knjgh - https://github.com/KoenJonguh/wp-snippets */
